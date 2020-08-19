@@ -1,0 +1,90 @@
+body {
+  background-color: darkgrey;
+  font-family: Gill Sans, sans-serif;
+}
+
+input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button, select {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Gill Sans, sans-serif;
+}
+
+h1 {
+
+  font-weight: 400;
+  color: white;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: white;
+  font-weight:300
+}
+
+h4 {
+  margin-bottom: 0px;
+  margin-top: 2px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-family: Courier, sans-serif;
+  font-weight: 100;
+  color: white;
+}
+
+p {
+  padding-top: 5px;
+  padding-left: 10px;
+  line-height: 1.4;
+  font-family: palatino, serif;
+  color: black;
+}
+
+.backButton{
+  padding-bottom: 0px;
+  padding-left: 0px;
+  color: black;
+  font-weight: 300;
+}
+
+.backButton:hover {
+  font-weight: bold;
+}
+
+.ingredients {
+  padding-left: 10px;
+}
+
+.results {
+  padding-left: 5px;
+  padding-bottom: 2px;
+  font-weight: 250;
+}
+
+.title {
+  padding-left: 5px;
+  margin-bottom: 2px;
+}
+
+.results:hover {
+  font-weight: 350;
+}
+
+.alert {
+  font-family: palatino, serif;
+  font-weight: lighter;
+  padding-left: 5px;
+}

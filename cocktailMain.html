@@ -1,0 +1,56 @@
+<!--
+Cocktail, an App
+Version 1
+
+Will fetch API data from thecocktaildb, and provide a seprate detailed pages
+for each drink, including ingredients, pictures, and instructions.
+
+bon appertif!
+*/
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="cocktailStyles.css">
+
+    <title>Cocktail, an App.</title>
+  </head>
+  <body>
+    <div class="container" id="mainpage">
+
+      <h1 class="appTitle">Cocktail, an App</h1>
+      <input v-model="drinkName" v-focus v-on:keyup.enter="fetchAPIData" type="text" placeholder="eg., Gin and Tonic">
+      <button type = "button" id = "get-cocktail" @click="fetchAPIData(); displayDetail = false;">Drink, please!</button>
+
+      <div v-if="displayList == true">
+        <br>
+        <div class="alert" v-if="results.drinks == null">Looks like there's no drinks out there by that name.  Try another!</div>
+        <div class="results" v-for="(drink,index) in results.drinks" @click="displayDrinkDetails(index);">
+          {{drink.strDrink}}
+        </div>
+      </div>
+
+      <div v-if="displayDetail == true">
+        <h4 class="backButton" @click="displayDetail = false; displayList = true;">< Back To Results</h4>
+        <h2 class="title">{{results.drinks[drinkIndex].strDrink}}</h2>
+        <h4>
+        <div v-for="ingredient in ingredientList" v-bind:key="ingredient" class="ingredients">
+          {{ingredient}}
+        </div>
+        </h4>
+        <p><i>How to Enjoy:</i><br>
+          {{results.drinks[drinkIndex].strInstructions}}
+        </p>
+      </div>
+
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="cocktailApp.js"></script>
+
+  </body>
+</html>
